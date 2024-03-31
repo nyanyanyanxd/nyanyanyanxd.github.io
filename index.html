@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>помогите</title>
+<link rel="stylesheet" href="styles1.css"> 
+
+<style>
+  #slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+  }
+
+  #image-slider {
+    display: flex;
+    transition: none;
+  }
+
+  .slide {
+    width: 100%;
+    flex: 0 0 auto;
+    display: none;
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+  }
+
+</style>
+
+</style>
+
+</head>
+<body>
+
+  <div id="slider-container">
+    <div id="image-slider">
+      <div class="slide">
+        <img src="img1.png" alt="Image 1">
+      </div>
+      <div class="slide">
+        <img src="img2.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img3.png" alt="Image 3">
+      </div>
+      <div class="slide">
+        <img src="img2.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img4.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img5.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img6.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="eab60a5bacafef70ceb853c448425cda.gif" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img5.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img7.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="не найдено" alt="  ">
+      </div>
+      <div class="slide">
+        <img src="img8.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img10.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img9.png" alt="Image 2">
+      </div>
+      <div class="slide">
+        <img src="img11.png" alt="Image 2">
+      </div>
+      <!-- Добавьте дополнительные изображения по необходимости -->
+    </div>
+  </div>
+  
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+  
+    function showSlide(index) {
+      if (index < 0) {
+        index = slides.length - 1;
+      } else if (index >= slides.length) {
+        index = 0;
+      }
+  
+      slides.forEach(slide => slide.style.display = 'none'); // Скрываем все слайды
+      slides[index].style.display = 'block'; // Показываем нужный слайд
+      currentIndex = index;
+    }
+  
+    function nextSlide() {
+      showSlide(currentIndex + 1);
+    }
+  
+    function prevSlide() {
+      showSlide(currentIndex - 1);
+    }
+  
+    document.addEventListener('keydown', function(event) {
+      if (event.code === 'Space') {
+        nextSlide();
+      }
+    });
+  
+    showSlide(currentIndex); // Показать первый слайд при загрузке страницы
+  </script>
+
+
+
+<div id="dialog">
+  <p id="dialogText">Привет, нажми пробел, чтобы продолжить</p>
+  <img id="dialogImage" style="display: none;" alt="Изображение диалога">
+</div>
+
+<script src="script1.js"></script>
+
+
+
+
+
+</body>
+</html>
